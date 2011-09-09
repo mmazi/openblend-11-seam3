@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    template="/WEB-INF/templates/default.xhtml">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/default.xhtml">
     <ui:define name="content">
         <h:form id="reg">
             <h2>Register</h2>
@@ -29,23 +29,25 @@
         <h2>Members</h2>
         <h:outputText rendered="#{empty members}" value="No registered members."/>
 
-        <h:dataTable var="memb" value="#{members}" rendered="#{not empty members}" styleClass="members">
-            <h:column>
-                <f:facet name="header">Id</f:facet>      #{memb.id}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Name</f:facet>    #{memb.name}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Email</f:facet>   #{memb.email}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Phone #</f:facet> #{memb.phoneNumber}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Delete</f:facet>
-                <h:form><h:commandLink value="Delete" action="#{memberManager.deleteMember(memb)}"/></h:form>
-            </h:column>
-        </h:dataTable>
+        <h:form>
+            <h:dataTable var="memb" value="#{members}" rendered="#{not empty members}" styleClass="members">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>      #{memb.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>    #{memb.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>   #{memb.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Phone #</f:facet> #{memb.phoneNumber}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandLink value="Delete" action="#{memberManager.deleteMember(memb)}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
     </ui:define>
 </ui:composition>

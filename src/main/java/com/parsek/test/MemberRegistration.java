@@ -19,9 +19,15 @@ public class MemberRegistration {
 
     private Member newMember;
 
-    @Produces @Named public Member getNewMember() { return newMember; }
+    @PostConstruct
+    public void initNewMember() {
+        newMember = new Member();
+    }
 
-    @PostConstruct public void initNewMember() { newMember = new Member(); }
+    @Produces @Named
+    public Member getNewMember() {
+        return newMember;
+    }
 
     public void register() throws Exception {
         em.persist(newMember);

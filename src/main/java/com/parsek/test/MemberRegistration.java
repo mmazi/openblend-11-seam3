@@ -11,8 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-@Stateful
-@Model
+@Stateful @Model
 public class MemberRegistration {
     @Inject private EntityManager em;
     @Inject private Event<Member> memberEventSrc;
@@ -27,5 +26,10 @@ public class MemberRegistration {
         em.persist(newMember);
         memberEventSrc.fire(newMember);
         initNewMember();
+    }
+
+    public void delete(Member m) {
+        em.remove(em.getReference(Member.class, m.getId()));
+        memberEventSrc.fire(m);
     }
 }

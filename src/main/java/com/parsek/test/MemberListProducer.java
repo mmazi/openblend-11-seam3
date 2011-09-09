@@ -3,7 +3,7 @@ package com.parsek.test;
 import com.parsek.test.model.Member;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -14,20 +14,18 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@Named @Stateless
-public class MemberManager {
+@RequestScoped
+public class MemberListProducer {
     @Inject private EntityManager em;
     private List<Member> members;
 
     @Produces @Named
-    public List<Member> getMembers() { return members; }
+    public List<Member> getMembers() {
+        return members;
+    }
 
     public void onMemberListChanged(@Observes final Member member) {
         retrieveAllMembers();
-    }
-
-    public void deleteMember(Member m) {
-        em.remove(em.getReference(Member.class, m.getId()));
     }
 
     @PostConstruct

@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: 
-Dependencies: org.slf4j,javax.api,javax.ejb.api,javax.servlet.api,com.google.guava,org.jodatime,org.ehcache
-

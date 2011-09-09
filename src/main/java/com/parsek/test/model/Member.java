@@ -22,6 +22,7 @@ public class Member implements Serializable {
     @Email @Size(min = 1, max = 50)
     private String email;
 
+    @NotNull
     private String phoneNumber;
     private Country country;
 

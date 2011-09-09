@@ -1,4 +1,4 @@
-package com.parsek.test.data;
+package com.parsek.test;
 
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;

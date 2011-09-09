@@ -1,9 +1,9 @@
-package com.parsek.test.data;
+package com.parsek.test;
 
 import com.parsek.test.model.Member;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -14,8 +14,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@RequestScoped
-public class MemberListProducer {
+@Named @Stateless
+public class MemberManager {
     @Inject private EntityManager em;
     private List<Member> members;
 
@@ -24,6 +24,10 @@ public class MemberListProducer {
 
     public void onMemberListChanged(@Observes final Member member) {
         retrieveAllMembersOrderedByName();
+    }
+
+    public void deleteMember(Member m) {
+        em.remove(em.find(Member.class, m.getId()));
     }
 
     @PostConstruct

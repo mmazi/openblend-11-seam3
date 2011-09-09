@@ -38,3 +38,17 @@ span.invalid {
     padding-left: 3px;
     color: red;
 }
+
+.members {
+}
+.members thead {
+    background-color: #ccccff;
+}
+.members tbody tr {
+    background-color: #cccccc;
+}
+
+.members tbody td {
+    padding: 3px 17px;
+}
+

@@ -1,4 +1,4 @@
-package com.parsek.test.controller;
+package com.parsek.test;
 
 import com.parsek.test.model.Member;
 

@@ -23,15 +23,15 @@ public class MemberManager {
     public List<Member> getMembers() { return members; }
 
     public void onMemberListChanged(@Observes final Member member) {
-        retrieveAllMembersOrderedByName();
+        retrieveAllMembers();
     }
 
     public void deleteMember(Member m) {
-        em.remove(em.find(Member.class, m.getId()));
+        em.remove(em.getReference(Member.class, m.getId()));
     }
 
     @PostConstruct
-    public void retrieveAllMembersOrderedByName() {
+    public void retrieveAllMembers() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Member> criteria = cb.createQuery(Member.class);
         Root<Member> member = criteria.from(Member.class);

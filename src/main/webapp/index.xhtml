@@ -31,20 +31,16 @@
 
         <h:dataTable var="memb" value="#{members}" rendered="#{not empty members}" styleClass="members">
             <h:column>
-                <f:facet name="header">Id</f:facet>
-                #{memb.id}
+                <f:facet name="header">Id</f:facet>      #{memb.id}
             </h:column>
             <h:column>
-                <f:facet name="header">Name</f:facet>
-                #{memb.name}
+                <f:facet name="header">Name</f:facet>    #{memb.name}
             </h:column>
             <h:column>
-                <f:facet name="header">Email</f:facet>
-                #{memb.email}
+                <f:facet name="header">Email</f:facet>   #{memb.email}
             </h:column>
             <h:column>
-                <f:facet name="header">Phone #</f:facet>
-                #{memb.phoneNumber}
+                <f:facet name="header">Phone #</f:facet> #{memb.phoneNumber}
             </h:column>
             <h:column>
                 <f:facet name="header">Delete</f:facet>

@@ -5,16 +5,11 @@ package com.parsek.test.model;
  * Date: 18.5.11<br/>
  */
 public enum Country {
-    SLV("sl"),
-    USA("en");
+    SLV("sl"), USA("en");
 
-    private String language;
+    public final String language;
 
     Country(String language) {
         this.language = language;
-    }
-
-    String getLanguage() {
-        return language;
     }
 }

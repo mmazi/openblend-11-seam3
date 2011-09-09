@@ -10,10 +10,11 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Stateful @Model
 public class MemberRegistration {
-    @Inject private EntityManager em;
+    @PersistenceContext private EntityManager em;
     @Inject private Event<Member> memberEventSrc;
 
     private Member newMember;

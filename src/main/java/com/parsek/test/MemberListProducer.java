@@ -3,20 +3,20 @@ package com.parsek.test;
 import com.parsek.test.model.Member;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@RequestScoped
+@Stateless
 public class MemberListProducer {
-    @Inject private EntityManager em;
+    @PersistenceContext private EntityManager em;
     private List<Member> members;
 
     @Produces @Named

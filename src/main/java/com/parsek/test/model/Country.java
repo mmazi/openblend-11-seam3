@@ -6,8 +6,7 @@ package com.parsek.test.model;
  */
 public enum Country {
     SLV("sl"),
-    USA("en"),
-    ;
+    USA("en");
 
     private String language;
 
@@ -15,7 +14,7 @@ public enum Country {
         this.language = language;
     }
 
-    public String getLanguage() {
+    String getLanguage() {
         return language;
     }
 }

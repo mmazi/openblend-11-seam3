@@ -5,6 +5,5 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 public class MemberRepositoryProducer {
-    @Produces @PersistenceContext
-    private EntityManager em;
+    @Produces @PersistenceContext private EntityManager em;
 }

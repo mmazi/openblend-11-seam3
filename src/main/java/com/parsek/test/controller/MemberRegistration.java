@@ -15,25 +15,17 @@ import javax.persistence.EntityManager;
 @Model
 public class MemberRegistration {
     @Inject private EntityManager em;
+    @Inject private Event<Member> memberEventSrc;
 
     private Member newMember;
 
-    @Inject
-    private Event<Member> memberEventSrc;
+    @Produces @Named public Member getNewMember() { return newMember; }
 
-    @Produces @Named
-    public Member getNewMember() {
-        return newMember;
-    }
+    @PostConstruct public void initNewMember() { newMember = new Member(); }
 
     public void register() throws Exception {
         em.persist(newMember);
         memberEventSrc.fire(newMember);
         initNewMember();
-    }
-
-    @PostConstruct
-    public void initNewMember() {
-        newMember = new Member();
     }
 }

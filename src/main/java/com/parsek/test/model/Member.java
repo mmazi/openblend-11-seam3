@@ -1,7 +1,5 @@
 package com.parsek.test.model;
 
-import org.hibernate.validator.constraints.Email;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +17,8 @@ public class Member implements Serializable {
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
     private String name;
 
-    @Email @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50)
+    @Pattern(regexp = "^(?:(?:(?:[^@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff\\.]|\\x5c(?=[@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff]))(?:[^@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff\\.]|(?<=\\x5c)[@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff]|\\x5c(?=[@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff])|\\.(?=[^\\.])){1,62}(?:[^@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff\\.]|(?<=\\x5c)[@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff])|[^@,\"\\[\\]\\x5c\\x00-\\x20\\x7f-\\xff\\.]{1,2})|\"(?:[^\"]|(?<=\\x5c)\"){1,62}\")@(?:(?!.{64})(?:[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\\.?|[a-zA-Z0-9]\\.?)+\\.(?:xn--[a-zA-Z0-9]+|[a-zA-Z]{2,6})|\\[(?:[0-1]?\\d?\\d|2[0-4]\\d|25[0-5])(?:\\.(?:[0-1]?\\d?\\d|2[0-4]\\d|25[0-5])){3}\\])$", message = "Not a valid email address.")
     private String email;
 
     @NotNull

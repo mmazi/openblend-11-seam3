@@ -77,13 +77,6 @@
         </dependency>
 -->
 
-        <!-- Seam Solder provides convenient, portable CDI extensions such as an injectable logger -->
-        <dependency>
-            <groupId>org.jboss.seam.solder</groupId>
-            <artifactId>seam-solder</artifactId>
-            <version>3.0.0.Final</version>
-        </dependency>
-
         <!-- JSR-303 (Bean Validation) Implementation -->
         <!-- Provides portable constraints such as @Email -->
         <!-- Hibernate Validator is the only JSR-303 implementation at the moment, so we can assume it's provided -->
@@ -109,6 +102,11 @@
             <artifactId>arquillian-junit</artifactId>
             <version>${arquillian.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.0</version>
         </dependency>
     </dependencies>
 
@@ -271,51 +269,6 @@
                     </testResource>
                 </testResources>
             </build>
-        </profile>
-
-        <profile>
-            <id>arq-weld-ee-embedded</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                    <version>${arquillian.version}</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.spec</groupId>
-                    <artifactId>jboss-javaee-6.0</artifactId>
-                    <version>${jboss-javaee6-spec.version}</version>
-                    <type>pom</type>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-core</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-api</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-          <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jboss.weld</groupId>
-                        <artifactId>weld-core-bom</artifactId>
-                        <version>1.1.0.Final</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
         </profile>
     </profiles>
 </project>

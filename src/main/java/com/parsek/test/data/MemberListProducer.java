@@ -17,9 +17,7 @@ import java.util.List;
 
 @RequestScoped
 public class MemberListProducer {
-    @Inject
-    @MemberRepository
-    private EntityManager em;
+    @Inject private EntityManager em;
 
     private List<Member> members;
 

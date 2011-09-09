@@ -29,8 +29,8 @@
         <h2>Members</h2>
         <h:outputText rendered="#{empty members}" value="No registered members."/>
 
-        <h:form>
-            <h:dataTable var="memb" value="#{members}" rendered="#{not empty members}" styleClass="members">
+        <h:form rendered="#{not empty members}">
+            <h:dataTable var="memb" value="#{members}" styleClass="members">
                 <h:column>
                     <f:facet name="header">Id</f:facet>      #{memb.id}
                 </h:column>

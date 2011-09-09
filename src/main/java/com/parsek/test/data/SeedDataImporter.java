@@ -33,7 +33,6 @@ public class SeedDataImporter {
     private Logger log;
 
     @Inject
-
     @MemberRepository
     private EntityManager em;
 

@@ -80,9 +80,33 @@
             <scope>runtime</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.jboss.seam.mail</groupId>
+            <artifactId>seam-mail-core-api</artifactId>
+            <version>3.0.0.Beta1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.seam.mail</groupId>
+            <artifactId>seam-mail-freemarker-impl</artifactId>
+            <version>3.0.0.Beta1-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
         <finalName>demo</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/mail</directory>
+                <targetPath>mail</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

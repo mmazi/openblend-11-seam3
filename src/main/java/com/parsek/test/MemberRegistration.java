@@ -1,6 +1,7 @@
 package com.parsek.test;
 
 import com.parsek.test.model.Member;
+import com.parsek.test.seam.MailSender;
 import com.parsek.test.seam.Messages;
 
 import javax.annotation.PostConstruct;
@@ -18,6 +19,7 @@ public class MemberRegistration {
     @PersistenceContext private EntityManager em;
     @Inject private Event<Member> memberEventSrc;
     @Inject private Messages messages;
+    @Inject private MailSender mailSender;
 
     private Member newMember;
 
@@ -34,6 +36,7 @@ public class MemberRegistration {
     public void register() throws Exception {
         em.persist(newMember);
         memberEventSrc.fire(newMember);
+        mailSender.sayWelcome(newMember);
         messages.addInfo("member.created", newMember.getName());
         initNewMember();
     }

@@ -40,7 +40,7 @@ public class MemberRegistration {
 
     public void delete(Member m) {
         em.remove(em.getReference(Member.class, m.getId()));
-        messages.addInfo("member.deleted", newMember.getName());
+        messages.addInfo("member.deleted", m.getName());
         memberEventSrc.fire(m);
     }
 }

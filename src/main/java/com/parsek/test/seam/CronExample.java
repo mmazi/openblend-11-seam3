@@ -16,7 +16,7 @@ public class CronExample {
 
     @PersistenceContext private EntityManager em;
 
-    public void countMembers(@Observes @Every(nth = 10, value = Interval.SECOND) Trigger t) {
+    public void countMembers(@Observes @Every(nth = 5, value = Interval.SECOND) Trigger t) {
         log.info("We have {} members.", em.createQuery("select count(m) from Member m").getSingleResult());
     }
 

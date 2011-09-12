@@ -1,8 +1,5 @@
 package com.parsek.test.seam;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -22,8 +19,6 @@ import javax.persistence.PersistenceContext;
 @Named
 @RequestScoped
 public class UnregisteredEmailValidator implements Validator {
-    private static final Logger log = LoggerFactory.getLogger(UnregisteredEmailValidator.class);
-
     @PersistenceContext private EntityManager entityManager;
     @Inject private Messages messages;
 

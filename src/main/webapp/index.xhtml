@@ -22,7 +22,7 @@
                     <h:message for="name" errorClass="invalid"/>
 
                     <h:outputLabel for="email" value="Email:"/>
-                    <h:inputText id="email" value="#{newMember.email}"/>
+                    <h:inputText id="email" value="#{newMember.email}" validator="unregisteredEmailValidator"/>
                     <h:message for="email" errorClass="invalid"/>
 
                     <h:outputLabel for="phoneNumber" value="Phone:"/>

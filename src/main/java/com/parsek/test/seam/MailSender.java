@@ -19,6 +19,7 @@ public class MailSender implements Serializable {
     @PersistenceContext private EntityManager entityManager;
     @Inject @Resource("mail/welcome.ftl") private InputStream templateStream;
     @Inject private MailMessage mailMessage;
+//    @javax.annotation.Resource(mappedName = "java:/Mail") private Session session;
 
     public void sayWelcome(Member member) {
         mailMessage

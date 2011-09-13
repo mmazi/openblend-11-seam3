@@ -58,7 +58,6 @@
             <scope>runtime</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.jboss.seam.cron</groupId>
             <artifactId>seam-cron-api</artifactId>
@@ -72,7 +71,6 @@
             <scope>runtime</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.jboss.seam.mail</groupId>
             <artifactId>seam-mail-core-api</artifactId>
@@ -83,7 +81,6 @@
             <artifactId>seam-mail-freemarker-impl</artifactId>
             <version>3.0.0.Beta1-SNAPSHOT</version>
         </dependency>
-
 
     </dependencies>
 

@@ -25,22 +25,3 @@ public class CronExample {
     }
 }
 
-/*
-11:02:26,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-3) Hello World 3s!
-11:02:29,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-4) Hello World 3s!
-11:02:32,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-1) Hello World 3s!
-11:02:35,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-2) Hello World 3s!
-11:02:38,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-3) Hello World 3s!
-11:02:41,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-4) Hello World 3s!
-11:02:44,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-1) Hello World 3s!
-11:02:47,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-2) Hello World 3s!
-11:02:50,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-3) Hello World 3s!
-11:02:53,723 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-4) Hello World 3s!
-11:02:56,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-1) Hello World 3s!
-11:02:59,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-2) Hello World 3s!
-11:03:00,001 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-3) It is time.
-11:03:02,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-4) Hello World 3s!
-11:03:05,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-1) Hello World 3s!
-11:03:08,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-2) Hello World 3s!
-11:03:11,722 INFO  [com.profpay.CronExample] (SimpleThreadPoolWorker-3) Hello World 3s!
-*/

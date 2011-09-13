@@ -52,3 +52,6 @@ span.invalid {
     padding: 3px 17px;
 }
 
+.msgs {
+    background-color: #ccffcc;
+}

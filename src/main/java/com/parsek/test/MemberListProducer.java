@@ -22,7 +22,7 @@ public class MemberListProducer {
         return members;
     }
 
-    public void onMemberListChanged(@Observes final Member member) {
+    public void onMemberListChanged(@Observes Member member) {
         retrieveAllMembers();
     }
 

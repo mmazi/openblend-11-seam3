@@ -1,4 +1,4 @@
-package com.parsek.test.model;
+package com.parsek.test;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +22,6 @@ public class Member implements Serializable {
     private String email;
 
     private String phoneNumber;
-    private Country country;
 
     // property accessors
 
@@ -31,9 +30,6 @@ public class Member implements Serializable {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-
-    public Country getCountry() { return country; }
-    public void setCountry(Country country) { this.country = country; }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }

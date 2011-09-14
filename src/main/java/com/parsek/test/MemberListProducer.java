@@ -1,7 +1,5 @@
 package com.parsek.test;
 
-import com.parsek.test.model.Member;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;

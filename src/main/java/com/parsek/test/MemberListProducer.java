@@ -28,6 +28,7 @@ public class MemberListProducer {
 
     @PostConstruct
     public void retrieveAllMembers() {
+        members = em.createQuery("select m from Member m order by m.name", Member.class).getResultList();
 /*
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Member> criteria = cb.createQuery(Member.class);
@@ -35,6 +36,5 @@ public class MemberListProducer {
         criteria.select(member).orderBy(cb.asc(member.get("name")));
         members = em.createQuery(criteria).getResultList();
 */
-        members = em.createQuery("select m from Member m order by m.name", Member.class).getResultList();
     }
 }

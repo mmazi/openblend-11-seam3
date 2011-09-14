@@ -35,5 +35,6 @@ public class MemberListProducer {
         Root<Member> member = criteria.from(Member.class);
         criteria.select(member).orderBy(cb.asc(member.get("name")));
         members = em.createQuery(criteria).getResultList();
+//        members = em.createQuery("select m from Member m order by m.name", Member.class).getResultList();
     }
 }

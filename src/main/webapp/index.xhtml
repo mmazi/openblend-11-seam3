@@ -1,21 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
-<f:view locale="#{userLocale}" >
-<f:loadBundle var="messages" basename="messages"/>
 <h:head>
     <title>CDI Demo on OpenShift</title>
     <h:outputStylesheet name="screen.css"/>
 </h:head>
 <h:body>
     <div id="container">
-        <h:form>
-            <h:commandLink value="sl" action="#{localeSelector.setUserLocale('sl')}"/> |
-            <h:commandLink value="en" action="#{localeSelector.setUserLocale('en')}"/>
-        </h:form>
         <div id="content">
-            <h:messages globalOnly="true" styleClass="msgs"/>
             <h:form id="reg">
-                <h2>#{messages['register']}</h2>
+                <h2>Register</h2>
                 <h:panelGrid columns="3">
 
                     <h:outputLabel for="name" value="Name:"/>
@@ -23,7 +16,7 @@
                     <h:message for="name" errorClass="invalid"/>
 
                     <h:outputLabel for="email" value="Email:"/>
-                    <h:inputText id="email" value="#{newMember.email}" validator="unregisteredEmailValidator"/>
+                    <h:inputText id="email" value="#{newMember.email}"/>
                     <h:message for="email" errorClass="invalid"/>
 
                     <h:outputLabel for="phoneNumber" value="Phone:"/>
@@ -35,7 +28,7 @@
                 </h:panelGrid>
             </h:form>
 
-            <h2>#{messages['members']}</h2>
+            <h2>Members</h2>
             <h:outputText rendered="#{empty members}" value="No registered members."/>
 
             <h:form rendered="#{not empty members}">
@@ -64,5 +57,4 @@
         </div>
     </div>
 </h:body>
-</f:view>
 </html>

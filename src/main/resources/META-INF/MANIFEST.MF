@@ -1,0 +1,1 @@
+Dependencies: org.slf4j,javax.api,javax.ejb.api,javax.servlet.api,org.jodatime

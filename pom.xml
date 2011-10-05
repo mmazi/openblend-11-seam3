@@ -81,6 +81,11 @@
             <artifactId>seam-mail-freemarker-impl</artifactId>
             <version>3.0.0.Beta1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.6</version>
+        </dependency>
 
     </dependencies>
 

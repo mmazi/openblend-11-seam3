@@ -1,4 +1,4 @@
-This is the code from the demo at the OpenBlend 2011 conference ( http://www.openblend.org/sl/povzetki#mazimatija )
+This is the code from the demo at the OpenBlend 2011 conference ( http://www.openblend.org/en/abstracts#mazimatija )
 and the talk in Kiberpipa ( http://www.kiberpipa.org/sl/event/razvoj-spletnih-aplikacij-v-java-ee-6-in-seam-3-1441/ ).
 
 I've written some comments here:
